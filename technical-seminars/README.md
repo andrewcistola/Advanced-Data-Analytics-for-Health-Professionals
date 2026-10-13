@@ -18,13 +18,13 @@ Each deck has:
 | 6 | [SQL Subqueries](week06_subqueries.pptx) | 8 | [Lab 6: Calculating HEDIS Scores](../labs/lab06_hedis/) |
 | 7 | [SQL Optimization](week07_sql_optimization.pptx) | 8 | [Lab 7: Provider Performance Comparison](../labs/lab07_provider_performance/) |
 | 8 | [Basic ML Syntax in Scikit-learn](week08_intro_to_ml.pptx) | 9 | [Lab 8: Closing Coding Gaps](../labs/lab08_coding_gaps/) |
-| 10 | [Logistic Regression in Scikit-learn](week10_logistic_regression.pptx) | 8 | [Lab 9: Assessing a Readmissions Program](../labs/lab09_readmissions/) |
-| 11 | [Random Forests in Scikit-learn](week11_random_forests.pptx) | 8 | [Lab 10: Root Causes of Diabetes Complications](../labs/lab10_diabetes_complications/) |
-| 12 | [Neural Networks in TensorFlow](week12_neural_networks.pptx) | 8 | [Lab 11: Targeting High-Risk Zip Codes](../labs/lab11_high_risk_zips/) |
-| 13 | [K-means in Scikit-learn](week13_kmeans_clustering.pptx) | 8 | [Lab 12: Fraud Detection](../labs/lab12_fraud_detection/) |
-| 14 | [Multi-model Workflow in Scikit-learn](week14_multi_model_workflow.pptx) | 8 | [Lab 13: Finding a Potential Intervention](../labs/lab13_finding_an_intervention/) |
+| 9 | [Logistic Regression in Scikit-learn](week09_logistic_regression.pptx) | 8 | [Lab 9: Assessing a Readmissions Program](../labs/lab09_readmissions/) |
+| 10 | [Random Forests in Scikit-learn](week10_random_forests.pptx) | 8 | [Lab 10: Root Causes of Diabetes Complications](../labs/lab10_diabetes_complications/) |
+| 11 | [Neural Networks in TensorFlow](week11_neural_networks.pptx) | 8 | [Lab 11: Targeting High-Risk Zip Codes](../labs/lab11_high_risk_zips/) |
+| 12 | [K-means in Scikit-learn](week12_kmeans_clustering.pptx) | 8 | [Lab 12: Fraud Detection](../labs/lab12_fraud_detection/) |
+| 13 | [Multi-model Workflow in Scikit-learn](week13_multi_model_workflow.pptx) | 8 | [Lab 13: Finding a Potential Intervention](../labs/lab13_finding_an_intervention/) |
 
-Week 9 is a break, so there is no seminar file for it.
+Weeks run 1–13, and each week pairs its seminar with the lab of the same number.
 
 ## Applying an organization template
 
