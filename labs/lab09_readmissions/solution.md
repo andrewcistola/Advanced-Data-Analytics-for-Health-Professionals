@@ -124,9 +124,9 @@ print(f"Adjusted odds ratio for TCP enrollment: {or_:.2f} (95% CI {lo:.2f}-{hi:.
 Exact numbers are in `expected_results.md`. The pattern:
 
 - The overall 30-day readmission rate is about 16–18%.
-- **Naive:** enrolled vs. not enrolled differ by less than a point (about 15% vs. 15%).
+- **Naive:** enrolled patients are readmitted about as often as, or more often than, those not enrolled (for example 17% vs. 13%).
 - Enrolled patients have clearly higher risk factors.
-- **Adjusted odds ratio** is about 0.5–0.75, with a 95% confidence interval entirely below 1 that includes (or nearly includes) the true effect of 0.70. With about 500 enrolled stays, the estimate is noisy, which is worth discussing.
+- **Adjusted odds ratio** is about 0.55–0.75, close to the true effect of 0.70, with a 95% confidence interval that sits mostly or entirely below 1. With about 500 enrolled stays the estimate is noisy, and the interval can just touch 1. That's worth discussing: the program likely works, but the evidence for a 25–30% effect needs more time or a better design.
 
 **Why the two disagree:** confounding by indication. Enrollment wasn't random; sicker patients were enrolled. Adjusting for the factors that drove both enrollment and readmission recovers the program's effect.
 

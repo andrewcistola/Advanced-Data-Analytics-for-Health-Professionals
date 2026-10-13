@@ -23,7 +23,7 @@ Count PA requests by year (`YEAR(submitted_datetime)`), `request_type` and `subm
 By `submission_channel`, compute requests, **median** `turnaround_hours`, and the approval rate (% `Approved`). Repeat with `request_type` added to the `GROUP BY`. Does the pattern hold for both?
 
 ### 3. Who's lagging?
-For 2025, join `prior_authorizations` to `providers` on `requesting_npi` and compute each **practice's** request count and ePA share. Use `HAVING` to keep practices with at least 15 requests, then list the 5 practices with the lowest ePA share.
+For 2025, join `prior_authorizations` to `providers` on `requesting_npi` and compute each **practice's** request count and ePA share. Use `HAVING` to keep practices with at least 10 requests, then list the 5 practices with the lowest ePA share.
 
 *Why `HAVING` and not `WHERE`?* Write one sentence in your SQL comments.
 

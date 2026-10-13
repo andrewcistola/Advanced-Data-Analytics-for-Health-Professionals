@@ -26,7 +26,7 @@ Python 3.12.x on Windows AMD64
   OK      seaborn 0.x
 
   OK      database data/health_analytics.duckdb
-          19 tables, 650,869 medical claims
+          19 tables, 639,612 medical claims
 
 All set!
 ```

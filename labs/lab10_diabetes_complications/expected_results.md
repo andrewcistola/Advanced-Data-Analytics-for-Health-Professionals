@@ -6,27 +6,27 @@ Output of every code block in `solution.md`, run against the default database bu
 ====================================================================================================
 lab10_diabetes_complications
 ====================================================================================================
-2122 members; complication rate 0.205 ; hypoglycemia rate 0.012
+2071 members; complication rate 0.208 ; hypoglycemia rate 0.015
 --- end of block 1 ---
 0 missing values
 --- end of block 2 ---
-Test AUC: 0.625
+Test AUC: 0.586
      feature  importance     sd
-         adi      0.0964 0.0315
-         pdc      0.0125 0.0096
-         age      0.0053 0.0049
-sulfonylurea      0.0042 0.0025
-  gap_months      0.0029 0.0052
-     insulin      0.0013 0.0025
+         adi      0.0534 0.0273
+         pdc      0.0112 0.0105
+sulfonylurea      0.0064 0.0028
+         age      0.0051 0.0114
+     insulin      0.0044 0.0040
+  gap_months      0.0024 0.0040
+  pcp_visits      0.0014 0.0058
    ed_visits      0.0000 0.0000
-  pcp_visits     -0.0005 0.0041
-         ckd     -0.0090 0.0043
+         ckd     -0.0027 0.0041
 --- end of block 3 ---
                           members  hypoglycemia_rate  any_complication_rate
 age_75_plus sulfonylurea                                                   
-0           0                1086              0.000                  0.209
-            1                 474              0.004                  0.179
-1           0                 363              0.003                  0.182
-            1                 199              0.116                  0.286
+0           0                1060              0.000                  0.207
+            1                 455              0.011                  0.176
+1           0                 354              0.006                  0.218
+            1                 202              0.119                  0.267
 --- end of block 4 ---
 ```

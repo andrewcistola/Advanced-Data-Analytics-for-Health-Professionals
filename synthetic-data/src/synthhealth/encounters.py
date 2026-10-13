@@ -125,6 +125,8 @@ class Generator:
         self.ccm_until = {}
         self.colon_done = set()
         self.morbid = rng.random(n) < 0.25
+        # persistent habit of getting an annual wellness / preventive visit (same people year after year)
+        self.wellness = rng.normal(0, 1, n)
         self.oxygen = set()
         self.flu = set()
         self.yearplan = defaultdict(list)
@@ -388,14 +390,14 @@ class Generator:
             chronic = nchron > 0 and rng.random() < 0.68
             if chronic:
                 dx = self.chronic_dx(i, mm, 1.0, focus=[rng.choice([c for c in CHRONIC_FOR_COUNT + ["OBES"] if self.has(i, c, mm)] or ["HTN"])])
-                dx += self.chronic_dx(i, mm, doc * 0.45)
+                dx += self.chronic_dx(i, mm, doc * 0.25)
             else:
                 ac = ACUTE_CODES[rng.choice(len(ACUTE_CODES), p=ACUTE_P)]
                 if ac == "U07.1" and not (d.year in (2021, 2022) or rng.random() < 0.3):
                     ac = "J06.9"
                 if ac == "H66.90" and age > 12:
                     ac = "J02.9"
-                dx = [ac] + self.chronic_dx(i, mm, doc * 0.35)
+                dx = [ac] + self.chronic_dx(i, mm, doc * 0.15)
                 self._acute_followups(i, d, mm, ac, npi)
             if diab and mm - self.last_a1c.get(i, -99) >= 3:
                 ccm = self.ccm_until.get(i, -1) >= mm
@@ -611,7 +613,7 @@ class Generator:
             lines.append(self.L("70450", d=d, rev="0350", rate=200))
         elif dx[0] in ("J18.9", "J44.1", "J45.901", "U07.1") and rng.random() < 0.6:
             lines.append(self.L("71046", d=d, rev="0320", rate=60))
-        alldx = dx + self.chronic_dx(i, mm, 0.5)
+        alldx = dx + self.chronic_dx(i, mm, 0.3)
         self.e.submit(i, "Institutional", "Emergency", d, d, hosp, lines, alldx, category="ed_fac", attending=doc,
                       facility=hosp, bill_type="131", pos="23", med_nec_risk=0.004)
         self.e.submit(i, "Professional", "Emergency", d, d, doc, [self.L(lvl, d=d)], alldx[:4], category="ed_prof",
@@ -857,7 +859,7 @@ class Generator:
             p_prev = 0.52 if ptype == MA else 0.38
         else:
             p_prev = 0.40
-        if rng.random() < p_prev * pay * sigmoid(0.5 + 0.8 * qv + 0.6 * self.care[i]) * 1.6:
+        if rng.random() < p_prev * pay * sigmoid(0.3 + 0.8 * qv + 0.4 * self.care[i] + 1.8 * self.wellness[i]) * 1.6:
             plan.append((when(), "preventive"))
         if self.sex[i] == "F" and 50 <= age <= 74 and rng.random() < sigmoid(0.0 + 0.8 * qv + 0.3 * self.care[i]) * pay * 1.05:
             plan.append((when(), "mammogram"))

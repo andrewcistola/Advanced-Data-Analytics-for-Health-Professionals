@@ -118,7 +118,7 @@ print(check.loc[check.scheme.notna(), ["rank", "provider_name", "scheme"]].to_st
 
 ## Expected results
 
-Exact numbers are in `expected_results.md`. Eight of the top 10 are planted schemes, and the other two are honest outliers (OB/GYNs, whose global delivery fee makes every claim expensive). The lab ranks around 14th. The pattern:
+Exact numbers are in `expected_results.md`. Seven or eight of the top 10 are planted schemes. The rest are honest outliers: OB/GYNs, whose global delivery fee makes every claim expensive. The fraudulent lab and the LCSW rank just outside the top 10 (around 12th–14th), which is why Task 4's extra feature matters. The pattern:
 
 | Pattern | Suspected scheme | Provider (answer key) |
 |---|---|---|

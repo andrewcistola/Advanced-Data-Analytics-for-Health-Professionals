@@ -7,12 +7,12 @@ Output of every code block in `solution.md`, run against the default database bu
 lab05_attribution
 ====================================================================================================
    visits  members
-0   43240    16921
+0   42197    16639
 --- end of block 1 ---
    attributed_members  aco_members  aco_pct
-0               16921      12699.0     75.0
+0               16639      12462.0     74.9
 --- end of block 2 ---
    hmo_members  no_pc_visit  pct_no_visit  pct_match_among_attributed
-0         8499       1864.0          21.9                        68.5
+0         8499       1980.0          23.3                        69.2
 --- end of block 3 ---
 ```

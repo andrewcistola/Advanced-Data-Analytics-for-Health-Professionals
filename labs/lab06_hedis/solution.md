@@ -84,9 +84,9 @@ ORDER BY d.plan_name;
 Exact numbers are in `expected_results.md`. The pattern:
 
 - BCS rates of roughly 78–85%.
-- A1c testing around 83–93%.
-- Eye exams around 35–46%, the weakest measure for every plan.
-- A few points of spread between plans. The D-SNP (Osprey Dual Complete) has the smallest denominators, so its rates swing the most. It has the lowest eye exam rate.
+- A1c testing around 80–92%.
+- Eye exams around 40–50%, the weakest measure for every plan.
+- A few points of spread between plans. The D-SNP (Osprey Dual Complete) has the smallest denominators, so its rates swing the most from year to year.
 
 ## Task 4: what the AI usually gets wrong
 

@@ -47,7 +47,7 @@ FROM prior_authorizations a
 JOIN providers p ON p.npi = a.requesting_npi
 WHERE YEAR(a.submitted_datetime) = 2025
 GROUP BY p.practice_name, p.specialty
-HAVING COUNT(*) >= 15          -- HAVING filters groups after aggregation, and WHERE runs before COUNT(*) exists
+HAVING COUNT(*) >= 10          -- HAVING filters groups after aggregation, and WHERE runs before COUNT(*) exists
 ORDER BY epa_share_pct
 LIMIT 5;
 ```

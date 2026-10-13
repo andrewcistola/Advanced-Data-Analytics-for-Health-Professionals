@@ -36,6 +36,7 @@ def hcc_pairs(con, base_year: int) -> pd.DataFrame:
             SELECT DISTINCT d.member_id, d.yr, h.hcc, h.hcc_label, h.illustrative_coefficient
             FROM dx d JOIN ref_hcc_crosswalk h ON h.icd10_code = d.dx
             WHERE d.member_id IN (SELECT member_id FROM ma)
+              AND h.hcc NOT IN (36, 225, 249)      -- acute events: not expected to recur every year
         )
         SELECT b.member_id, b.hcc, b.hcc_label, b.illustrative_coefficient,
                CASE WHEN n.member_id IS NOT NULL THEN 1 ELSE 0 END AS recaptured
@@ -89,9 +90,15 @@ def build(con, base_year):
     feats = member_features(con, base_year)
     return pairs.merge(feats, on="member_id", how="left")
 
-FEATURES = ["pcp_visits", "specialist_visits", "had_awv", "age", "dual"]
+NUMERIC = ["pcp_visits", "specialist_visits", "had_awv", "age", "dual"]
+
+def design(df, columns=None):
+    """Numeric features plus one dummy column per HCC category."""
+    X = pd.concat([df[NUMERIC], pd.get_dummies(df["hcc"].astype(str), prefix="hcc", dtype=float)], axis=1)
+    return X if columns is None else X.reindex(columns=columns, fill_value=0)
+
 train_df = build(con, 2023)
-train_df[FEATURES + ["recaptured"]].describe().round(2)
+train_df[NUMERIC + ["recaptured"]].describe().round(2)
 ```
 
 ## Task 3: Train and compare
@@ -104,7 +111,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import roc_auc_score
 
-X, y = train_df[FEATURES], train_df["recaptured"]
+X, y = design(train_df), train_df["recaptured"]
+FEATURES = list(X.columns)
 X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.25, stratify=y, random_state=42)
 
 logit = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)).fit(X_tr, y_tr)
@@ -115,8 +123,8 @@ auc_tree = roc_auc_score(y_te, tree.predict_proba(X_te)[:, 1])
 print(f"Logistic AUC {auc_logit:.3f} | Tree AUC {auc_tree:.3f}")
 
 coefs = pd.Series(logit[-1].coef_[0], index=FEATURES).sort_values()
-print("Standardized logistic coefficients:\n", coefs.round(3))
-print("Tree importances:\n", pd.Series(tree.feature_importances_, index=FEATURES).sort_values(ascending=False).round(3))
+print("Standardized logistic coefficients (most negative = most likely to be missed):\n", coefs.round(3).head(8))
+print("Tree importances:\n", pd.Series(tree.feature_importances_, index=FEATURES).sort_values(ascending=False).round(3).head(8))
 ```
 
 ## Task 4: Outreach list for 2025
@@ -124,7 +132,7 @@ print("Tree importances:\n", pd.Series(tree.feature_importances_, index=FEATURES
 ```python
 best = logit if auc_logit >= auc_tree else tree
 score_df = build(con, 2024)            # 2024 features; 'recaptured' here is 2025's actual outcome
-score_df["p_recapture"] = best.predict_proba(score_df[FEATURES])[:, 1]
+score_df["p_recapture"] = best.predict_proba(design(score_df, FEATURES))[:, 1]
 outreach = (score_df.sort_values("p_recapture")
             .loc[:, ["member_id", "hcc", "hcc_label", "p_recapture", "pcp_visits", "had_awv"]]
             .head(100))
@@ -142,10 +150,10 @@ for n in (100, 200):
 
 Exact numbers are in `expected_results.md`. The pattern:
 
-- About 90% of 2023 HCCs are recaptured in 2024. Gaps are the minority, which makes them hard to predict.
-- Both models reach only a modest AUC (roughly 0.57–0.65 on the test split, and about 0.63 scoring 2024 → 2025).
-- The strongest predictors are **PCP visits** and **annual wellness visit** (both raise recapture) and **specialist visits** (specialists document their own conditions). Age and dual status matter little.
-- The lowest-scored pairs are recaptured noticeably less often than average (for example about 86% vs. 91%), so an outreach call to the list is more likely to close a real gap. The biggest driver, though, is *next* year's visits, which the model can't see. That's a good discussion of why prediction alone isn't enough: scheduling the wellness visit is the intervention.
+- About 90% of chronic 2023 HCCs are recaptured in 2024. Heart failure, COPD and arrhythmias (each followed by a specialist) are recaptured most reliably. Dementia, CKD stage 4, morbid obesity and uncomplicated diabetes are dropped most often.
+- The logistic model reaches an AUC of about 0.75 on the test split and about 0.72 scoring 2024 → 2025. The tree is a little lower.
+- The strongest predictors are **specialist visits**, **PCP visits** and an **annual wellness visit** (all raise recapture) plus the **HCC category**. Age and dual status matter little.
+- The 200 lowest-scored pairs are recaptured only about 75% of the time vs. about 90% overall, so an outreach list built this way finds real gaps at more than twice the base rate.
 
 **Instructor check:** `answer_key.member_truth` holds true condition onset dates. Nearly every member on the outreach list still has the condition, so these are documentation gaps, not resolved conditions.
 

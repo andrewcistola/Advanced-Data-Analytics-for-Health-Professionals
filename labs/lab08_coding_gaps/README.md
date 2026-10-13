@@ -33,10 +33,10 @@ UNPIVOT medical_claims ON dx_1, dx_2, dx_3, dx_4, dx_5, dx_6, dx_7, dx_8, dx_9, 
 ## Tasks
 
 ### 1. Who had an HCC, and was it recaptured?
-Limit to members enrolled in Medicare Advantage for at least 11 months of **both** 2023 and 2024. Build one row per **member × HCC** coded in 2023, with a column `recaptured` = 1 if the same HCC appears on any of that member's 2024 claims. What share of 2023 HCCs were recaptured?
+Limit to members enrolled in Medicare Advantage for at least 11 months of **both** 2023 and 2024. Build one row per **member × HCC** coded in 2023, with a column `recaptured` = 1 if the same HCC appears on any of that member's 2024 claims. Leave out HCCs for acute events that aren't expected to recur every year: 36 (severe acute diabetes complications), 225 (acute on chronic heart failure) and 249 (stroke). What share of 2023 HCCs were recaptured? Which HCCs are recaptured least often?
 
 ### 2. Build features (from 2023 claims)
-For each member: number of PCP visits, specialist visits, whether they had an annual wellness visit (G0438/G0439), age, and dual-eligible status (`dual_status` not null). Join the features onto the Task 1 table.
+For each member: number of PCP visits, specialist visits, whether they had an annual wellness visit (G0438/G0439), age, and dual-eligible status (`dual_status` not null). Join the features onto the Task 1 table, and add the **HCC itself** as a feature with `pd.get_dummies(df["hcc"], prefix="hcc")`. Some conditions are documented much more reliably than others.
 
 ### 3. Train and compare two models
 Split 75/25 with `train_test_split(..., stratify=y, random_state=42)`. Fit a `LogisticRegression` (scale the features first) and a `DecisionTreeClassifier(max_depth=4)`. Report each model's test AUC. Which features matter most? Look at the logistic coefficients and the tree's `feature_importances_`.

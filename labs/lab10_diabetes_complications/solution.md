@@ -130,8 +130,8 @@ print(tab)
 Exact numbers are in `expected_results.md`. The pattern:
 
 - About 2,000–2,500 cohort members, with roughly 15–25% having a complication in 2023–2025.
-- Test AUC around 0.60–0.70. Complications are hard to predict from claims alone, which is a useful discussion point.
-- Top permutation-importance features: **area deprivation** and **PDC** (lower adherence → more complications) by a wide margin, then age, insulin and sulfonylurea. Gap months and PCP visits add little in this sample, a reminder that a real driver can still be weak in a modest dataset.
+- Test AUC around 0.58–0.68. Complications are hard to predict from claims alone, which is a useful discussion point.
+- Top permutation-importance features: **area deprivation** and **PDC** (lower adherence → more complications), then sulfonylurea, age and insulin. Gap months and PCP visits add little in this sample, a reminder that a real driver can still be weak in a modest dataset.
 - **The novel finding (Task 4):** hypoglycemia is near zero in every cell *except* members **75+ on a sulfonylurea**, where about 1 in 9 had a hypoglycemia ED visit or admission. Their overall complication rate is also the highest of the four groups. The forest barely ranks sulfonylurea because the effect is an *interaction* in a small subgroup, which is why you check model hints with simple tables.
 
 **Instructor check:** `answer_key.parameters` lists the true drivers (A1c through adherence, deprivation, coverage gaps in the prior 24 months, no usual PCP, frailty, zip risk, and sulfonylurea at 75+ for hypoglycemia). `answer_key.diabetes_complications` lists the true events.

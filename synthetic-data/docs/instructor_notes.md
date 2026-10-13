@@ -33,7 +33,9 @@ These are the patterns the generator plants deliberately so each lab has a finda
 - Statin use among diabetics 40–75 is about 62% (SPD).
 
 ## Coding gaps
-- A routine PCP visit always documents the condition it's about, but documents each of the member's *other* chronic conditions only about 45% × the practice's `doc_rate` of the time (35% × on acute visits, 50% on ED claims). Annual wellness and preventive visits document about 97%. Specialists always code their own conditions.
+- A routine PCP visit always documents the condition it's about, but documents each of the member's *other* chronic conditions only about 25% × the practice's `doc_rate` of the time (15% × on acute visits, 30% on ED claims). Annual wellness and preventive visits document about 97%. Specialists always code their own conditions.
+- Members have a persistent wellness-visit habit: the same people get annual wellness visits year after year. So last year's wellness visit predicts this year's recapture.
+- Conditions without a specialist (dementia, CKD stage 4, morbid obesity, uncomplicated diabetes) are dropped most often.
 - As a result, members with few PCP visits and no wellness visit often lose an HCC for a year even though they still have it. Those features predict missed recapture in Lab 8.
 - `answer_key.member_truth` holds true onset dates.
 - Rx-based suspects:

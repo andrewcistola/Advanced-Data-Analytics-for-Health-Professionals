@@ -25,7 +25,7 @@ Rows: 25,000
 
 Care management program enrollments.
 
-Rows: 1,089
+Rows: 1,025
 
 | Column | Type | Description |
 |---|---|---|
@@ -72,7 +72,7 @@ Rows: 1,209,071
 
 Patient-accounting transaction ledger for the Understory Health system (hospital + employed physicians). Sum of ar_effect by account_id = outstanding A/R balance as of 2026-03-31.
 
-Rows: 1,181,419
+Rows: 1,165,086
 
 | Column | Type | Description |
 |---|---|---|
@@ -100,7 +100,7 @@ Rows: 1,181,419
 
 Service lines for each medical claim.
 
-Rows: 1,255,626
+Rows: 1,224,987
 
 | Column | Type | Description |
 |---|---|---|
@@ -124,7 +124,7 @@ Rows: 1,255,626
 
 Medical claim headers (837P professional and 837I institutional) with final adjudication. Corrected/rebilled claims are new rows linked by related_claim_id.
 
-Rows: 650,869
+Rows: 639,612
 
 | Column | Type | Description |
 |---|---|---|
@@ -183,7 +183,7 @@ Rows: 650,869
 
 Pharmacy (NCPDP) claims, paid and rejected.
 
-Rows: 828,727
+Rows: 833,190
 
 | Column | Type | Description |
 |---|---|---|
@@ -245,7 +245,7 @@ Rows: 17
 
 Prior authorization requests (medical and pharmacy) with submission channel and turnaround.
 
-Rows: 7,173
+Rows: 7,177
 
 | Column | Type | Description |
 |---|---|---|
