@@ -1,0 +1,14 @@
+# pip alternative to environment.yml (python -m pip install -r requirements.txt)
+jupyterlab>=4.2
+ipykernel
+duckdb>=1.1
+pandas>=2.2
+numpy
+matplotlib
+seaborn
+scikit-learn>=1.5
+statsmodels
+pyarrow
+jupysql>=0.10
+duckdb-engine>=0.13
+tensorflow>=2.16

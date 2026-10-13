@@ -1,0 +1,106 @@
+zip_code,city,county,state,latitude,longitude
+32003,Fleming Island,Clay,FL,30.0933,-81.719
+32008,Branford,Suwannee,FL,29.9395,-82.8993
+32024,Lake City,Columbia,FL,30.1055,-82.6878
+32025,Lake City,Columbia,FL,30.1601,-82.6396
+32038,Fort White,Columbia,FL,29.9207,-82.6879
+32040,Glen Saint Mary,Baker,FL,30.2861,-82.2041
+32043,Green Cove Springs,Clay,FL,29.9983,-81.7647
+32044,Hampton,Bradford,FL,29.8575,-82.1483
+32052,Jasper,Hamilton,FL,30.5029,-82.9322
+32053,Jennings,Hamilton,FL,30.5482,-83.135
+32054,Lake Butler,Union,FL,30.0035,-82.3828
+32055,Lake City,Columbia,FL,30.2702,-82.6254
+32058,Lawtey,Bradford,FL,30.0472,-82.1055
+32060,Live Oak,Suwannee,FL,30.1759,-83.0304
+32061,Lulu,Columbia,FL,30.0754,-82.5385
+32062,Mc Alpin,Suwannee,FL,30.1320,-82.9815
+32063,Macclenny,Baker,FL,30.2737,-82.1325
+32064,Live Oak,Suwannee,FL,30.2956,-82.9844
+32065,Orange Park,Clay,FL,30.1382,-81.7742
+32066,Mayo,Lafayette,FL,30.04,-83.1462
+32068,Middleburg,Clay,FL,30.084,-81.8645
+32071,O Brien,Suwannee,FL,30.0381,-82.93
+32073,Orange Park,Clay,FL,30.1637,-81.7291
+32083,Raiford,Union,FL,30.0704,-82.2001
+32087,Sanderson,Baker,FL,30.2522,-82.2729
+32091,Starke,Bradford,FL,29.9583,-82.1185
+32094,Wellborn,Suwannee,FL,30.1796,-82.8505
+32096,White Springs,Hamilton,FL,30.3387,-82.7765
+32112,Crescent City,Putnam,FL,29.4272,-81.5579
+32113,Citra,Marion,FL,29.3918,-82.1062
+32131,East Palatka,Putnam,FL,29.6609,-81.5879
+32134,Fort Mc Coy,Marion,FL,29.3443,-81.8597
+32139,Georgetown,Putnam,FL,29.3842,-81.6183
+32140,Florahome,Putnam,FL,29.7581,-81.8622
+32148,Interlachen,Putnam,FL,29.627,-81.8894
+32177,Palatka,Putnam,FL,29.6577,-81.6595
+32179,Ocklawaha,Marion,FL,29.0643,-81.8857
+32181,Pomona Park,Putnam,FL,29.5002,-81.5915
+32187,San Mateo,Putnam,FL,29.5888,-81.5921
+32189,Satsuma,Putnam,FL,29.5594,-81.6406
+32193,Welaka,Putnam,FL,29.4905,-81.653
+32195,Weirsdale,Marion,FL,28.9782,-81.8932
+32601,Gainesville,Alachua,FL,29.6489,-82.325
+32603,Gainesville,Alachua,FL,29.6515,-82.3493
+32605,Gainesville,Alachua,FL,29.6785,-82.3679
+32606,Gainesville,Alachua,FL,29.6954,-82.4023
+32607,Gainesville,Alachua,FL,29.6456,-82.4033
+32608,Gainesville,Alachua,FL,29.6132,-82.3873
+32609,Gainesville,Alachua,FL,29.7005,-82.308
+32615,Alachua,Alachua,FL,29.8135,-82.472
+32617,Anthony,Marion,FL,29.3048,-82.1262
+32618,Archer,Alachua,FL,29.5597,-82.5108
+32619,Bell,Gilchrist,FL,29.7837,-82.8711
+32621,Bronson,Levy,FL,29.461,-82.6356
+32622,Brooker,Bradford,FL,29.919,-82.2956
+32625,Cedar Key,Levy,FL,29.171,-83.0168
+32626,Chiefland,Levy,FL,29.4832,-82.8809
+32628,Cross City,Dixie,FL,29.6372,-83.2032
+32631,Earleton,Alachua,FL,29.7439,-82.1034
+32640,Hawthorne,Putnam,FL,29.574,-82.1056
+32641,Gainesville,Alachua,FL,29.6824,-82.2014
+32643,High Springs,Alachua,FL,29.841,-82.6156
+32648,Horseshoe Beach,Dixie,FL,29.4869,-83.2616
+32653,Gainesville,Alachua,FL,29.7728,-82.3782
+32656,Keystone Heights,Clay,FL,29.7976,-81.9899
+32666,Melrose,Putnam,FL,29.7325,-82.0279
+32667,Micanopy,Alachua,FL,29.5122,-82.3053
+32668,Morriston,Levy,FL,29.2813,-82.4917
+32669,Newberry,Alachua,FL,29.6609,-82.5852
+32680,Old Town,Dixie,FL,29.6699,-83.005
+32686,Reddick,Marion,FL,29.3754,-82.244
+32693,Trenton,Gilchrist,FL,29.6133,-82.8176
+32694,Waldo,Alachua,FL,29.7871,-82.1608
+32696,Williston,Levy,FL,29.3977,-82.4856
+34420,Belleview,Marion,FL,29.0531,-82.0375
+34428,Crystal River,Citrus,FL,28.9584,-82.5993
+34429,Crystal River,Citrus,FL,28.8547,-82.6669
+34431,Dunnellon,Marion,FL,29.1392,-82.5328
+34432,Dunnellon,Marion,FL,29.1015,-82.3413
+34433,Dunnellon,Citrus,FL,28.9949,-82.5196
+34434,Dunnellon,Citrus,FL,28.9938,-82.4241
+34436,Floral City,Citrus,FL,28.7304,-82.3077
+34442,Hernando,Citrus,FL,28.9223,-82.39
+34446,Homosassa,Citrus,FL,28.7508,-82.5139
+34448,Homosassa,Citrus,FL,28.788,-82.568
+34449,Inglis,Levy,FL,29.0955,-82.6561
+34450,Inverness,Citrus,FL,28.834,-82.2822
+34452,Inverness,Citrus,FL,28.8358,-82.3304
+34453,Inverness,Citrus,FL,28.8723,-82.3454
+34461,Lecanto,Citrus,FL,28.8516,-82.4876
+34465,Beverly Hills,Citrus,FL,28.9295,-82.4892
+34470,Ocala,Marion,FL,29.1989,-82.0874
+34471,Ocala,Marion,FL,29.1605,-82.1288
+34472,Ocala,Marion,FL,29.1253,-82.0086
+34473,Ocala,Marion,FL,29.0058,-82.1828
+34474,Ocala,Marion,FL,29.1565,-82.2095
+34475,Ocala,Marion,FL,29.2573,-82.161
+34476,Ocala,Marion,FL,29.1159,-82.2422
+34479,Ocala,Marion,FL,29.2541,-82.1095
+34480,Ocala,Marion,FL,29.1056,-82.098
+34481,Ocala,Marion,FL,29.1281,-82.2975
+34482,Ocala,Marion,FL,29.2611,-82.2195
+34488,Silver Springs,Marion,FL,29.2635,-81.9532
+34491,Summerfield,Marion,FL,29.0112,-82.0325
+34498,Yankeetown,Levy,FL,29.0305,-82.719
