@@ -2,7 +2,7 @@
 
 Encounters are generated in `encounters.py`; every billable event is routed through
 `Engine.submit()`, which prices, adjudicates and stores the claim (and, for the
-Sabal Ridge Health system, writes the corresponding patient-accounting ledger rows).
+Understory Health system, writes the corresponding patient-accounting ledger rows).
 """
 from __future__ import annotations
 
@@ -167,7 +167,9 @@ class Engine:
         if urgency is None:
             urgency = "Expedited" if rng.random() < 0.10 else "Standard"
         if request_type == "Pharmacy":
-            p_epa = min(0.42 + 0.09 * y, 0.85)
+            adopt = self.p_epa.get(requesting_npi)
+            adopted = adopt is not None and not (isinstance(adopt, float) and math.isnan(adopt)) and mm >= adopt
+            p_epa = 0.88 if adopted else min(0.30 + 0.05 * y, 0.55)
             ch_p = [p_epa, 0.0, (1 - p_epa) * 0.8, (1 - p_epa) * 0.2]
         else:
             adopt = self.p_epa.get(requesting_npi)

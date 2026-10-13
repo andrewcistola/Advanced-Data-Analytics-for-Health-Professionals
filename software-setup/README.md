@@ -54,5 +54,5 @@ Both tools open the database **read-only**, so you can keep DBeaver and JupyterL
 ## For instructors
 
 - **Building the database:** run `python generate.py` in [`../synthetic-data`](../synthetic-data). It writes `output/health_analytics.duckdb` (student file, no answer key) and `output/health_analytics_instructor.duckdb` (adds the `answer_key` schema). Only distribute `health_analytics.duckdb`.
-- **Distributing it:** the student file is about 140 MB (about 60 MB zipped). Upload it to your learning management system or attach it to a GitHub Release. Students can also build it themselves with `python generate.py` (about 10 minutes), which produces identical data with the default seed.
+- **Distributing it:** the student file is about 150 MB (about 70 MB zipped). Upload it to your learning management system or attach it to a GitHub Release. Students can also build it themselves with `python generate.py` (about 10–12 minutes), which produces identical data with the default seed.
 - **Accommodations / no-install option:** students who can't install software can run the notebooks on an institution-hosted JupyterHub, or in Google Colab after running `pip install jupysql duckdb-engine` and uploading the database file. Colab isn't open source, but it runs in any browser. DuckDB, pandas and scikit-learn are preinstalled there.

@@ -9,7 +9,7 @@ Everything is synthetic. No real person, claim, provider, or plan is represented
 - **Region:** North Central Florida (Alachua, Marion, Columbia, Putnam, Levy, Citrus, Clay and nearby counties). The zip codes and their coordinates are real; every area measure attached to them is synthetic.
 - **Population:** 25,000 people by default, observed January 2021 to December 2025. People are born, move in or out, age into Medicare, and die.
 - **Payers:** commercial (fully insured, HDHP and self-funded), ACA Marketplace, Medicaid fee-for-service and managed care, Original Medicare with Part D, and Medicare Advantage (including a D-SNP). People churn between payers. Medicaid continuous enrollment through March 2023 is followed by the 2023–24 unwinding.
-- **Hospital system:** *Sabal Ridge Health* (fictional) runs two hospitals, an outpatient lab and an employed physician group. Its 835-style payment ledger is the `hospital_payments` table. Competing fictional hospitals and plans fill out the market.
+- **Hospital system:** *Understory Health* (fictional) runs Understory Regional Medical Center, Understory Community Hospital, an outpatient lab, an employed physician group and an ACO, Understory Health Partners. Its 835-style payment ledger is the `hospital_payments` table. Competing fictional hospitals and plans fill out the market.
 - **Identifiers:** NPIs and NDCs are synthetic and start with `9`, so they can't collide with real ones. Plan, provider and facility names are invented.
 
 ## Tables
@@ -21,7 +21,7 @@ Everything is synthetic. No real person, claim, provider, or plan is represented
 | `medical_claims` | claim | 837P/837I headers: dates, setting, DRG, NPIs, up to 10 ICD-10 dx, charges, allowed, paid, cost sharing, status, denial CARC, resubmissions, appeals |
 | `medical_claim_lines` | claim line | CPT/HCPCS, CPT II quality codes, modifiers, revenue codes, units, line amounts, line denials |
 | `pharmacy_claims` | fill | NDC, days supply, quantity, prescriber, pharmacy, tier, PA, paid and rejected (NCPDP) claims, cost split |
-| `hospital_payments` | transaction | Sabal Ridge ledger: charges, payer payments, contractual adjustments, sequestration, denials, appeals, secondary payments, patient payments, self-pay discounts, charity care, bad debt |
+| `hospital_payments` | transaction | Understory ledger: charges, payer payments, contractual adjustments, sequestration, denials, appeals, secondary payments, patient payments, self-pay discounts, charity care, bad debt |
 | `prior_authorizations` | request | Medical and pharmacy PA requests: channel (ePA, portal, fax, phone), timestamps, decision |
 | `care_management` | enrollment | Transitional Care Program (hospital) and Diabetes Complex Case Management (plan) |
 | `providers` | NPI | Directory with specialty, taxonomy, practice/TIN, health system, ACO, FQHC flag |

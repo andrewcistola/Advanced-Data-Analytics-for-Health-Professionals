@@ -25,7 +25,7 @@ Rows: 25,000
 
 Care management program enrollments.
 
-Rows: 838
+Rows: 1,089
 
 | Column | Type | Description |
 |---|---|---|
@@ -42,7 +42,7 @@ Rows: 838
 
 Eligibility: one row per member per month of coverage. Months without a row are uninsured or outside the region.
 
-Rows: 1,208,429
+Rows: 1,209,071
 
 | Column | Type | Description |
 |---|---|---|
@@ -70,9 +70,9 @@ Rows: 1,208,429
 
 ## `hospital_payments`
 
-Patient-accounting transaction ledger for the Sabal Ridge Health system (hospital + employed physicians). Sum of ar_effect by account_id = outstanding A/R balance as of 2026-03-31.
+Patient-accounting transaction ledger for the Understory Health system (hospital + employed physicians). Sum of ar_effect by account_id = outstanding A/R balance as of 2026-03-31.
 
-Rows: 816,976
+Rows: 1,181,419
 
 | Column | Type | Description |
 |---|---|---|
@@ -100,7 +100,7 @@ Rows: 816,976
 
 Service lines for each medical claim.
 
-Rows: 1,165,043
+Rows: 1,255,626
 
 | Column | Type | Description |
 |---|---|---|
@@ -124,7 +124,7 @@ Rows: 1,165,043
 
 Medical claim headers (837P professional and 837I institutional) with final adjudication. Corrected/rebilled claims are new rows linked by related_claim_id.
 
-Rows: 596,362
+Rows: 650,869
 
 | Column | Type | Description |
 |---|---|---|
@@ -183,7 +183,7 @@ Rows: 596,362
 
 Pharmacy (NCPDP) claims, paid and rejected.
 
-Rows: 835,232
+Rows: 828,727
 
 | Column | Type | Description |
 |---|---|---|
@@ -245,7 +245,7 @@ Rows: 17
 
 Prior authorization requests (medical and pharmacy) with submission channel and turnaround.
 
-Rows: 6,808
+Rows: 7,173
 
 | Column | Type | Description |
 |---|---|---|
@@ -271,7 +271,7 @@ Rows: 6,808
 
 Provider directory (individuals and organizations). NPIs are synthetic and start with 9.
 
-Rows: 268
+Rows: 241
 
 | Column | Type | Description |
 |---|---|---|

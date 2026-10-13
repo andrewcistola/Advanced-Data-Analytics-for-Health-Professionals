@@ -157,7 +157,7 @@ def build(n_members: int = 25000, seed: int = 42):
         ("tcp_enrollment", "Sicker patients more likely to enroll (selection on baseline risk)"),
         ("followup_7d_log_odds_effect_on_readmission", "-0.45"),
         ("diabetes_ccm_complication_hazard_ratio", str(CCM_HAZARD_RR)),
-        ("diabetes_complication_drivers", "A1c (via adherence), area deprivation, coverage gap in prior 24 months, "
+        ("diabetes_complication_drivers", "A1c (via adherence), area deprivation, any coverage gap since 2021, "
          "no usual PCP, frailty, zip risk; plus hypoglycemia from sulfonylurea (glipizide) use at age 75+ (higher with CKD)"),
         ("medicaid_unwinding_window", "2023-04 to 2024-06"),
         ("as_of_date", R.AS_OF_DATE),

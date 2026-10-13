@@ -14,12 +14,13 @@ SUBURBAN_CITIES = {"Lake City", "Palatka", "Orange Park", "Fleming Island", "Mid
                    "Alachua", "Newberry", "Belleview", "Inverness", "Crystal River", "Starke", "Keystone Heights",
                    "Live Oak", "Summerfield"}
 
-SYSTEM = "Sabal Ridge Health"  # the fictional hospital system whose payment ledger is generated
+SYSTEM = "Understory Health"  # the fictional hospital system whose payment ledger is generated
+ACO_NAME = "Understory Health Partners"  # the system-sponsored ACO
 
 HOSPITALS = [
     # name, zip, system, chargemaster markup, commercial contract factor, beds
-    ("Sabal Ridge Medical Center", "32608", SYSTEM, 3.4, 1.15, 420),
-    ("Sabal Ridge Community Hospital", "32055", SYSTEM, 3.1, 1.05, 90),
+    ("Understory Regional Medical Center", "32608", SYSTEM, 3.4, 1.15, 420),
+    ("Understory Community Hospital", "32055", SYSTEM, 3.1, 1.05, 90),
     ("Coquina Regional Hospital", "34471", "Coquina Health Partners", 3.6, 1.10, 310),
     ("Heronwood Memorial Hospital", "32177", "Independent", 2.9, 0.95, 70),
 ]
@@ -64,7 +65,7 @@ def build_zip_area(rng: np.random.Generator) -> pd.DataFrame:
         + 0.06 * zs(z.miles_to_nearest_hospital.values)
     hotspot = np.zeros(n, bool)
     # hotspots: rural/suburban zips with only moderate ADI so they are not trivially found
-    cand = np.where((urb != "Urban") & (adi > 40) & (adi < 80))[0]
+    cand = np.where((urb != "Urban") & (adi > 40) & (adi < 80) & (z.population.values >= 7000))[0]
     hotspot[rng.choice(cand, size=min(5, len(cand)), replace=False)] = True
     z["_zip_risk"] = np.exp(structured + np.where(hotspot, 0.90, 0.0) + rng.normal(0, 0.06, n))
     z["_hotspot"] = hotspot
@@ -147,8 +148,8 @@ def build_providers(rng: np.random.Generator, fake, zips: pd.DataFrame) -> pd.Da
             provider_role="Pharmacy")
     add(entity_type="Organization", provider_name="Kestrel Mail Pharmacy Services", specialty="Mail Order Pharmacy",
         practice_id="TIN-KMAIL", practice_name="Kestrel Mail Pharmacy Services", zip_code="32608", provider_role="Pharmacy")
-    add(entity_type="Organization", provider_name="Sabal Ridge Specialty Pharmacy", specialty="Specialty Pharmacy",
-        practice_id="TIN-SRSP", practice_name="Sabal Ridge Specialty Pharmacy", health_system=SYSTEM, zip_code="32608",
+    add(entity_type="Organization", provider_name="Understory Specialty Pharmacy", specialty="Specialty Pharmacy",
+        practice_id="TIN-USSP", practice_name="Understory Specialty Pharmacy", health_system=SYSTEM, zip_code="32608",
         provider_role="Pharmacy")
     add(entity_type="Organization", provider_name="Wellborn Discount Drugs", specialty="Community/Retail Pharmacy",
         practice_id="TIN-WDD", practice_name="Wellborn Discount Drugs", zip_code=pick_zip(0.2),
@@ -160,7 +161,8 @@ def build_providers(rng: np.random.Generator, fake, zips: pd.DataFrame) -> pd.Da
         peds = p < 5
         fqhc = 5 <= p < 8
         system = SYSTEM if (not fqhc and rng.random() < 0.40) else "Independent"
-        aco = "North Florida Community ACO" if rng.random() < 0.5 else None
+        # Understory Health Partners is the system's ACO: all employed practices plus some independents
+        aco = ACO_NAME if (system == SYSTEM or rng.random() < 0.40) else None
         z = pick_zip(1.5, high_adi=fqhc)
         city = zips.set_index("zip_code").city[z]
         if fqhc:
@@ -168,7 +170,7 @@ def build_providers(rng: np.random.Generator, fake, zips: pd.DataFrame) -> pd.Da
         elif peds:
             pname = f"{city} Pediatrics" + ("" if p % 2 else " & Adolescent Medicine")
         elif system == SYSTEM:
-            pname = f"Sabal Ridge Primary Care - {city}" + (f" {p}" if p % 3 == 0 else "")
+            pname = f"Understory Primary Care - {city}" + (f" {p}" if p % 3 == 0 else "")
         else:
             pname = f"{fake.last_name()} {rng.choice(['Family Medicine', 'Internal Medicine', 'Primary Care', 'Family Practice'])}"
         tin = f"TIN-PC{p:03d}"
@@ -217,7 +219,7 @@ def build_providers(rng: np.random.Generator, fake, zips: pd.DataFrame) -> pd.Da
             system = SYSTEM if rng.random() < 0.45 else "Independent"
             z = pick_zip(2.5)
             city = zips.set_index("zip_code").city[z]
-            pname = f"Sabal Ridge {label}" if system == SYSTEM else f"{city} {label}"
+            pname = f"Understory {label}" if system == SYSTEM else f"{city} {label}"
             fraud = None
             if spec == "Physical Therapy" and g == 2:
                 pname, system, fraud = "Riverbend Physical Therapy", "Independent", "PT_EXCESSIVE_UNITS"

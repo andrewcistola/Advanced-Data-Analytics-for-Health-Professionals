@@ -21,7 +21,7 @@ ACUTE_CODES = list(ACUTE_DX)
 ACUTE_P = np.array(list(ACUTE_DX.values()))
 ACUTE_P = ACUTE_P / ACUTE_P.sum()
 TELE_SHARE = {2021: 0.26, 2022: 0.15, 2023: 0.10, 2024: 0.08, 2025: 0.07}
-TCP_LAUNCH = date(2023, 7, 1)          # Transitional Care Program start at Sabal Ridge hospitals
+TCP_LAUNCH = date(2023, 7, 1)          # Transitional Care Program start at Understory hospitals
 TCP_TRUE_OR = 0.70                     # true odds ratio of readmission for enrolled patients
 CCM_START_M = 12                       # Diabetes complex case management starts Jan 2022
 CCM_HAZARD_RR = 0.80
@@ -91,7 +91,7 @@ class Generator:
             hm = pr[(pr.specialty == "Hospitalist") & (pr.zip_code == hz)].npi.values
             self.hosp_docs[hn] = (ed, hm)
         self.sys_hosp = h[h.health_system == SYSTEM].npi.values
-        self.srmc = h[h.provider_name == "Sabal Ridge Medical Center"].npi.values[0]
+        self.srmc = h[h.provider_name == "Understory Regional Medical Center"].npi.values[0]
         self.lab_map = pr[pr.provider_role == "Lab"].set_index("provider_name").npi.to_dict()
         self.lab_good = self.lab_map["Gulf Atlantic Reference Laboratory"]
         self.lab_fraud = self.lab_map["Prairie Diagnostics Laboratory"]
@@ -378,7 +378,7 @@ class Generator:
             else:
                 code = "99393" if age < 12 else "99394" if age < 18 else "99395" if age < 40 else "99396" if age < 65 else "99397"
             dx = ["Z00.129"] if age < 18 else [rng.choice(["Z00.00", "Z00.01"], p=[0.6, 0.4])]
-            dx += self.chronic_dx(i, mm, min(doc + 0.1, 0.98))
+            dx += self.chronic_dx(i, mm, 0.97)
             if age >= 18:
                 labs += ["80053", "85025"] + (["80061"] if age >= 35 or self.has(i, "HLD", mm) else [])
                 if rng.random() < 0.15:
@@ -388,14 +388,14 @@ class Generator:
             chronic = nchron > 0 and rng.random() < 0.68
             if chronic:
                 dx = self.chronic_dx(i, mm, 1.0, focus=[rng.choice([c for c in CHRONIC_FOR_COUNT + ["OBES"] if self.has(i, c, mm)] or ["HTN"])])
-                dx += self.chronic_dx(i, mm, doc)
+                dx += self.chronic_dx(i, mm, doc * 0.45)
             else:
                 ac = ACUTE_CODES[rng.choice(len(ACUTE_CODES), p=ACUTE_P)]
                 if ac == "U07.1" and not (d.year in (2021, 2022) or rng.random() < 0.3):
                     ac = "J06.9"
                 if ac == "H66.90" and age > 12:
                     ac = "J02.9"
-                dx = [ac] + self.chronic_dx(i, mm, doc * 0.8)
+                dx = [ac] + self.chronic_dx(i, mm, doc * 0.35)
                 self._acute_followups(i, d, mm, ac, npi)
             if diab and mm - self.last_a1c.get(i, -99) >= 3:
                 ccm = self.ccm_until.get(i, -1) >= mm
@@ -611,7 +611,7 @@ class Generator:
             lines.append(self.L("70450", d=d, rev="0350", rate=200))
         elif dx[0] in ("J18.9", "J44.1", "J45.901", "U07.1") and rng.random() < 0.6:
             lines.append(self.L("71046", d=d, rev="0320", rate=60))
-        alldx = dx + self.chronic_dx(i, mm, 0.7)
+        alldx = dx + self.chronic_dx(i, mm, 0.5)
         self.e.submit(i, "Institutional", "Emergency", d, d, hosp, lines, alldx, category="ed_fac", attending=doc,
                       facility=hosp, bill_type="131", pos="23", med_nec_risk=0.004)
         self.e.submit(i, "Professional", "Emergency", d, d, doc, [self.L(lvl, d=d)], alldx[:4], category="ed_prof",
@@ -757,12 +757,13 @@ class Generator:
                       + 0.30 * (ptype in (MCD_FFS, MCD_MC)) + 0.25 * (dstatus == "07"))
         enrolled = False
         if hosp in self.sys_hosp and disch >= TCP_LAUNCH and dstatus in ("01", "06"):
-            risk_z = (base_logit + 1.6) / 0.7
-            enrolled = rng.random() < sigmoid(-0.7 + 0.9 * risk_z)
+            observable_logit = base_logit - 0.35 * self.fr[i]
+            risk_z = (observable_logit + 1.9) / 0.6
+            enrolled = rng.random() < sigmoid(0.1 + 0.9 * risk_z)
             if enrolled:
                 self.n_cm += 1
                 self.care_mgmt.append(dict(cm_enrollment_id=f"CM{self.n_cm:07d}", member_id=self.m.member_id.values[i],
-                                           program_name="Transitional Care Program", program_sponsor="Sabal Ridge Health",
+                                           program_name="Transitional Care Program", program_sponsor="Understory Health",
                                            enrollment_date=disch, end_date=disch + timedelta(days=30),
                                            referral_source="Inpatient care team", index_claim_id=acct_cid))
         h = self.home[i]
@@ -856,7 +857,7 @@ class Generator:
             p_prev = 0.52 if ptype == MA else 0.38
         else:
             p_prev = 0.40
-        if rng.random() < p_prev * pay * sigmoid(0.5 + 0.8 * qv + 0.3 * self.care[i]) * 1.6:
+        if rng.random() < p_prev * pay * sigmoid(0.5 + 0.8 * qv + 0.6 * self.care[i]) * 1.6:
             plan.append((when(), "preventive"))
         if self.sex[i] == "F" and 50 <= age <= 74 and rng.random() < sigmoid(0.0 + 0.8 * qv + 0.3 * self.care[i]) * pay * 1.05:
             plan.append((when(), "mammogram"))
@@ -887,7 +888,7 @@ class Generator:
             act = {c: on[c][idx] <= mm for c in on}
             nch = sum(act[c].astype(int) for c in CHRONIC_FOR_COUNT)
             pt = st[mm, idx]
-            care = np.exp(0.35 * self.care[idx])
+            care = np.exp(0.6 * self.care[idx])  # persistent care-seeking: heavy users stay heavy users
             payf = np.select([pt == NONE, np.isin(pt, [MCD_FFS, MCD_MC])], [0.4, 0.9], 1.0)
             hp = has_pcp[idx]
             # yearly schedules
@@ -925,11 +926,11 @@ class Generator:
             dm = idx[act["DIAB"]]
             if len(dm):
                 a1c = np.array([self.a1c_val(int(i), START_YEAR + mm // 12) for i in dm])
-                lo = max(mm - 24, 0)
+                lo = 0  # any coverage gap since the start of the period
                 churn = (st[lo:mm + 1, dm] == NONE).any(axis=0) & pres[dm]
                 ccm = np.array([self.ccm_until.get(int(i), -1) >= mm for i in dm])
-                h = (0.0038 * np.exp(0.60 * (a1c - 7.5) + 0.25 * self.adi_z[dm] + 0.80 * churn + 0.70 * (~has_pcp[dm])
-                                     + 0.25 * self.fr[dm]) * self.zrisk[dm] ** 0.8 * np.where(ccm, CCM_HAZARD_RR, 1.0))
+                h = (0.0030 * np.exp(0.80 * (a1c - 7.5) + 0.12 * self.adi_z[dm] + 0.70 * churn + 0.70 * (~has_pcp[dm])
+                                     + 0.25 * self.fr[dm]) * self.zrisk[dm] ** 0.4 * np.where(ccm, CCM_HAZARD_RR, 1.0))
                 comp = dm[rng.random(len(dm)) < h]
                 agedm = age_at(self.birth[dm], mm)
                 su = np.array([on_drug(self.reg, int(i), {"GLIPIZIDE"}, mm) for i in dm])

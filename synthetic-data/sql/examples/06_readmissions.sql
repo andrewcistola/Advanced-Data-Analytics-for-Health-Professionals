@@ -1,4 +1,4 @@
--- 30-day all-cause readmissions after discharges from Sabal Ridge hospitals
+-- 30-day all-cause readmissions after discharges from Understory hospitals
 WITH stays AS (
     SELECT member_id, claim_id, billing_npi, admission_date, discharge_date, discharge_status
     FROM medical_claims

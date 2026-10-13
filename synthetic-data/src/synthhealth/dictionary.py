@@ -60,7 +60,7 @@ TABLES = {
         "claim_status": "Paid or Rejected", "reject_code": "NCPDP reject code (65, 70, 75, 79)", "reject_description": "Reject reason",
         "ingredient_cost": "Ingredient cost", "dispensing_fee": "Dispensing fee", "total_cost": "Ingredient + fee",
         "member_copay": "Member cost share", "plan_paid": "Plan paid"}),
-    "hospital_payments": ("Patient-accounting transaction ledger for the Sabal Ridge Health system (hospital + employed physicians). Sum of ar_effect by account_id = outstanding A/R balance as of 2026-03-31.", {
+    "hospital_payments": ("Patient-accounting transaction ledger for the Understory Health system (hospital + employed physicians). Sum of ar_effect by account_id = outstanding A/R balance as of 2026-03-31.", {
         "transaction_id": "Unique transaction id", "account_id": "Patient account (encounter)", "claim_id": "Claim the transaction relates to",
         "member_id": "Patient (member) identifier", "billing_npi": "Billing NPI", "billing_provider_name": "Facility or physician",
         "service_line": "Inpatient, Outpatient, Emergency, Post-acute, Professional", "payer_type": "Payer type (Self-pay if uninsured)",

@@ -20,7 +20,7 @@ Avoid putting the folder inside OneDrive, iCloud Drive, Dropbox or Google Drive.
 1. Download **`health_analytics.duckdb.zip`** from the link your instructor provides.
 2. Unzip it and move **`health_analytics.duckdb`** into `HealthAnalytics/data/`.
 
-The file is about 140 MB (about 60 MB zipped). It contains every course table: beneficiaries, coverage, medical and pharmacy claims, hospital payments, prior authorizations, providers, area data and code lookups. All data are synthetic.
+The file is about 150 MB (about 70 MB zipped). It contains every course table: beneficiaries, coverage, medical and pharmacy claims, hospital payments, prior authorizations, providers, area data and code lookups. All data are synthetic.
 
 ## 1.3 Download the setup files
 
