@@ -52,7 +52,8 @@ The data has the messiness and structure that make healthcare analytics hard: ch
 
 | Folder | What it is |
 |---|---|
-| [`labs/`](labs/) | Thirteen labs, from SQL basics to machine learning, each with a student handout, a full SQL/Python solution and expected results. |
+| [`labs/`](labs/) | Thirteen labs, from SQL basics to machine learning, each with a student handout, a full SQL/Python solution and expected results. A slide deck with every lab's instructions is in [`labs/slides/`](labs/slides/). |
+| [`technical-seminars/`](technical-seminars/) | One short slide deck per week's technical seminar, with speaker notes and an overview of the matching lab. Plain formatting, ready for an organization's template. |
 | [`software-setup/`](software-setup/) | Student setup guide for the software (all free and open source): DuckDB, DBeaver Community, and JupyterLab via Miniforge. Includes the conda environment, a setup checker, and a getting-started notebook. |
 | [`synthetic-data/`](synthetic-data/) | Generator for the synthetic data warehouse described above. Outputs a DuckDB database and Parquet files, with a data dictionary and instructor notes. |
 

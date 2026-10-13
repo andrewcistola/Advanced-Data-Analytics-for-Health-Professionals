@@ -28,6 +28,11 @@ Thirteen hands-on labs that use the synthetic health data warehouse (`health_ana
 
 Every lab follows the same pattern: 3–5 tasks, about 60–75 minutes, one task where students use a generative AI tool and check its work, and a short written answer to the business question.
 
+## Slides
+
+- [`slides/lab_instructions.pptx`](slides/lab_instructions.pptx): one deck with an overview and instruction slide for every lab.
+- Each week's technical seminar deck in [`../technical-seminars`](../technical-seminars) ends with an overview of that week's lab.
+
 ## Setup
 
 Students need the software in [`../software-setup`](../software-setup) and the database file `health_analytics.duckdb` (built by [`../synthetic-data`](../synthetic-data)). SQL labs assume a DBeaver connection to that file. Notebook labs assume it sits at `../data/health_analytics.duckdb` relative to the notebook.
