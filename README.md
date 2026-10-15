@@ -64,6 +64,18 @@ The data has the messiness and structure that make healthcare analytics hard: ch
 - **Students:** follow [`software-setup/`](software-setup/), then start with [Lab 1](labs/lab01_software_tour/).
 - **Instructors:** build the data with [`synthetic-data/`](synthetic-data/) (`python generate.py`), then check the labs with `python labs/tools/run_solutions.py <database>`.
 
+## About the instructor
+
+**Andrew S. Cistola, PhD, MPH** is a data scientist, health policy researcher and adjunct faculty member who teaches graduate courses in healthcare data analytics.
+
+He leads analytics teams supporting federal health programs at a national consulting firm. His work centers on Medicare improper payment measurement, risk adjustment and payment integrity. Before that, he worked on ACA Marketplace risk adjustment at a health plan, on national benchmarks of healthcare administrative transactions at an industry nonprofit, and as a data analyst in state public health.
+
+His research interests include value-based payment, risk adjustment and health equity, diabetes outcomes, program evaluation, and the use of AI in health services research. He has presented at national health services research, health data and health economics conferences. He holds a PhD in health services research and an MPH in population health management, and is continuing graduate study in applied mathematics.
+
+He often tells students that data problems are, at root, human problems. That is why this course pairs technical skills with stakeholder work, communication and judgment.
+
+[Connect on LinkedIn](https://www.linkedin.com/in/andrew-cistola/)
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
