@@ -1,4 +1,4 @@
-# Advanced Health Data Analytics for Professionals
+# Advanced Data Analytics for Health Professionals
 
 This repo holds code and content for an intermediate, graduate-level course in health data analytics. The course is aimed at current or future medical providers, health administrators, or public health professionals.
 
