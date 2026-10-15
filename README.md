@@ -53,6 +53,7 @@ The data has the messiness and structure that make healthcare analytics hard: ch
 | Folder | What it is |
 |---|---|
 | [`labs/`](labs/) | Thirteen labs, from SQL basics to machine learning, each with a student handout, a full SQL/Python solution and expected results. A slide deck with every lab's instructions is in [`labs/slides/`](labs/slides/). |
+| [`ai-seminars/`](ai-seminars/) | One short slide deck per week's AI seminar: generative AI tools, uses, limits and evaluation, then machine learning methods and tools, with speaker notes and a discussion slide. |
 | [`management-seminars/`](management-seminars/) | One short slide deck per week's management seminar: basics, best practices and common pitfalls for running analytics projects, with speaker notes. Same plain format as the technical seminars. |
 | [`domain-seminars/`](domain-seminars/) | One short slide deck per week's domain seminar: basics, policy, reform goals, how analytics is deployed and how it drives decisions, with speaker notes and sources. Same plain format as the technical seminars. |
 | [`technical-seminars/`](technical-seminars/) | One short slide deck per week's technical seminar, with speaker notes and an overview of the matching lab. Plain formatting, ready for an organization's template. |
