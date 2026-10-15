@@ -22,7 +22,7 @@ The questions are in [questions.md](questions.md).
 **Resources**
 
 - You may use your own notes and all course materials: seminar slides, lab handouts and your lab work.
-- **Do not use generative AI tools to write, outline or edit your answers.** The essays are where you show your own planning and judgment, and the oral follow-up will ask you to explain and extend what you wrote.
+- **Generative AI tools are allowed.** You may use them to brainstorm, outline, draft or edit. You are fully responsible for everything you submit: in the oral follow-up you must be able to explain each answer and the rationale behind it in your own words. Treat AI output the way this course teaches, checking it before you rely on it.
 - If you draw on an outside source, cite it briefly.
 
 **How essays are graded**
