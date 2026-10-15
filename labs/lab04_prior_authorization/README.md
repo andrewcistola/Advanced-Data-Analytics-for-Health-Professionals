@@ -28,7 +28,7 @@ For 2025, join `prior_authorizations` to `providers` on `requesting_npi` and com
 *Why `HAVING` and not `WHERE`?* Write one sentence in your SQL comments.
 
 ### 4. AI step
-Ask an AI tool: *"Which transaction standards are used for electronic prior authorization for medical services vs. prescription drugs?"* Check the answer against the lecture. Did it name X12 278 and NCPDP SCRIPT? Did it mention the FHIR-based APIs in the CMS rule?
+Ask an AI tool: *"Which transaction standards are used for electronic prior authorization for medical services vs. prescription drugs?"* Check the answer against the seminar. Did it name X12 278 and NCPDP SCRIPT? Did it mention the FHIR-based APIs in the CMS rule?
 
 ## Deliverable
 
