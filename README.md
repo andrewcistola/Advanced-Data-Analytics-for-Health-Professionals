@@ -21,7 +21,7 @@ Each week combines four strands that build toward a hands-on lab:
 
 | Strand | What it covers |
 |---|---|
-| **Project management** | Components of an analytics project, stakeholder alignment, writing requirements, quality assurance, designing deliverables, communicating complex findings, managing timelines and setbacks |
+| **Analytics management** | Components of an analytics project, stakeholder alignment, writing requirements, quality assurance, designing deliverables, communicating complex findings, managing timelines and setbacks |
 | **AI in analytics** | How generative AI and machine learning work, the current tool landscape, using AI to write code, when to use it and when not to, and how to evaluate its output |
 | **Domain seminar** | A healthcare administration topic, such as claims and revenue cycle, quality measurement, risk adjustment, transitions of care, area-level resources, or fraud, waste and abuse |
 | **Technical seminar** | The skill the lab needs, from basic SQL through joins, subqueries and optimization, to scikit-learn and neural networks |
@@ -32,8 +32,8 @@ The **lab** is where the strands meet. Students apply that week's technical skil
 
 | Phase | Labs | Focus |
 |---|---|---|
-| **Foundations: SQL and the revenue cycle** | 1–4 | Relational databases, querying claims, denials, electronic prior authorization |
-| **Value-based payment and quality** | 5–7 | Patient attribution, HEDIS-style quality measures, provider performance and the data problems that make value-based payment hard |
+| **Foundations: Databases and the revenue cycle** | 1–4 | Relational databases, querying claims, denials, electronic prior authorization |
+| **Value-based payment and quality usign SQL** | 5–7 | Patient attribution, HEDIS-style quality measures, provider performance and the data problems that make value-based payment hard |
 | **Machine learning for population health** | 8–12 | Risk adjustment coding gaps (intro to ML), program evaluation (logistic regression), root causes of complications (random forests), high-risk geographies (neural networks), fraud detection (clustering) |
 | **Putting it together** | 13 | A multi-model workflow that turns predictions into an intervention decision with an estimated return |
 
