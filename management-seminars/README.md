@@ -2,7 +2,7 @@
 
 One short slide deck per management seminar. These cover the project skills that turn analysis into results: scoping, stakeholders, requirements, software, quality assurance, deliverables, communication and planning.
 
-Most decks have a title slide and five content slides, each with **speaker notes** to review and edit:
+Most decks have a title slide, five content slides and a closing discussion slide, each with **speaker notes** to review and edit:
 
 1. **Basics:** the topic's core concepts and terminology
 2. **Best practices** for data analytics (two slides)
