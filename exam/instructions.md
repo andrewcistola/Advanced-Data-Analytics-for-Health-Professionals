@@ -1,6 +1,6 @@
 # Written Exam: Instructions
 
-The exam has two parts: three short written essays, then a short oral follow-up with the instructor. Together they ask you to plan realistic analytics projects and explain your thinking.
+The exam has two parts: two short written essays, then a short oral follow-up with the instructor. Together they ask you to plan realistic analytics projects and explain your thinking.
 
 The questions are in [questions.md](questions.md).
 
@@ -8,14 +8,14 @@ The questions are in [questions.md](questions.md).
 
 **What to write**
 
-- Answer **three** questions: Question 1 (required) and **two** of Questions 2–5.
+- Answer **two** questions: Question 1 (required) and **one** of Questions 2–5.
 - Write about **500 words** per answer (roughly 450–550).
 - Each question asks you to plan a future project in a setting you choose. Name your setting in the first sentence of each answer.
 - Use the numbered points under each question as a guide. You don't need headings for each one, but your answer should cover them.
 
 **Format and submission**
 
-- Submit one document with all three answers, each labeled with its question number.
+- Submit one document with both answers, each labeled with its question number.
 - Put the word count at the end of each answer.
 - Submit by the posted due date.
 
@@ -27,7 +27,7 @@ The questions are in [questions.md](questions.md).
 
 **How essays are graded**
 
-Essays are graded on **participation**. You earn full credit for submitting three complete, on-topic answers of about 500 words each, on time. The essays are not graded for polish; they are the starting point for the oral follow-up.
+Essays are graded on **participation**. You earn full credit for submitting two complete, on-topic answers of about 500 words each, on time. The essays are not graded for polish; they are the starting point for the oral follow-up.
 
 ## Part 2: Oral follow-up (50% of exam grade)
 
@@ -61,5 +61,5 @@ The oral follow-up is scored on five criteria, each aligned with the course lear
 
 | Component | Weight | How it's graded |
 |---|---|---|
-| Written essays (3 × ~500 words) | 50% | Participation: complete, on-topic, on time |
+| Written essays (2 × ~500 words) | 50% | Participation: complete, on-topic, on time |
 | Oral follow-up (5–10 minutes) | 50% | Rubric above, 20 points scaled to 50% |

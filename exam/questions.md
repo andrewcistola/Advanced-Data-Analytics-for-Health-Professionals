@@ -1,11 +1,11 @@
 # Written Exam: Questions
 
-Answer **three** questions in total:
+Answer **two** questions in total:
 
 - **Question 1** (required)
-- **Two** of Questions 2–5 (your choice)
+- **One** of Questions 2–5 (your choice)
 
-Each answer should be about **500 words**. Each question asks you to plan a future analytics project in a setting you choose: a workplace you know, one you expect to work in, or a realistic one you describe. State your setting in the first sentence of each answer. You may use the same setting for all three answers or a different one for each.
+Each answer should be about **500 words**. Each question asks you to plan a future analytics project in a setting you choose: a workplace you know, one you expect to work in, or a realistic one you describe. State your setting in the first sentence of each answer. You may use the same setting for both answers or a different one for each.
 
 See [instructions.md](instructions.md) for format, submission and grading.
 
