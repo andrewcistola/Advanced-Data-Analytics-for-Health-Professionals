@@ -68,9 +68,9 @@ The data has the messiness and structure that make healthcare analytics hard: ch
 
 **Andrew S. Cistola, PhD, MPH** is a data scientist, health policy researcher and adjunct faculty member who teaches graduate courses in healthcare data analytics.
 
-He leads analytics teams supporting federal health programs at a national consulting firm. His work centers on Medicare improper payment measurement, risk adjustment and payment integrity. Before that, he worked on ACA Marketplace risk adjustment at a health plan, on national benchmarks of healthcare administrative transactions at an industry nonprofit, and as a data analyst in state public health.
+He leads analytics teams supporting federal health programs at a national consulting firm. His work centers on payment integrity for Medicare programs. Before that, he worked on ACA Marketplace risk adjustment at a health plan, on national benchmarks of healthcare administrative transactions at an industry nonprofit, and as a data analyst in state public health.
 
-His research interests include value-based payment, risk adjustment and health equity, diabetes outcomes, program evaluation, and the use of AI in health services research. He has presented at national health services research, health data and health economics conferences. He holds a PhD in health services research and an MPH in population health management, and is continuing graduate study in applied mathematics.
+His research interests include value-based payment, risk adjustment and health equity, diabetes outcomes, program evaluation, and the use of AI in health services research. He has presented at national health services research, health data and health economics conferences. He holds a PhD in health services research and an MPH in population health management, both from the University of Florida.
 
 He often tells students that data problems are, at root, human problems. That is why this course pairs technical skills with stakeholder work, communication and judgment.
 
