@@ -66,7 +66,7 @@ The data has the messiness and structure that make healthcare analytics hard: ch
 
 ## About the instructor
 
-**Andrew S. Cistola, PhD, MPH** is a data scientist, health policy researcher and adjunct faculty member who teaches graduate courses in healthcare data analytics.
+**Andrew S. Cistola, PhD, MPH** is a data scientist, health policy researcher and adjunct faculty member who teaches graduate courses in health data analytics and health information technology.
 
 He leads analytics teams supporting federal health programs at a national consulting firm. His work centers on payment integrity for Medicare programs. Before that, he worked on ACA Marketplace risk adjustment at a health plan, on national benchmarks of healthcare administrative transactions at an industry nonprofit, and as a data analyst in state public health.
 
