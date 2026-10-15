@@ -33,7 +33,7 @@ The **lab** is where the strands meet. Students apply that week's technical skil
 | Phase | Labs | Focus |
 |---|---|---|
 | **Foundations: Databases and the revenue cycle** | 1–4 | Relational databases, querying claims, denials, electronic prior authorization |
-| **Value-based payment and quality usign SQL** | 5–7 | Patient attribution, HEDIS-style quality measures, provider performance and the data problems that make value-based payment hard |
+| **Value-based payment and quality using SQL** | 5–7 | Patient attribution, HEDIS-style quality measures, provider performance and the data problems that make value-based payment hard |
 | **Machine learning for population health** | 8–12 | Risk adjustment coding gaps (intro to ML), program evaluation (logistic regression), root causes of complications (random forests), high-risk geographies (neural networks), fraud detection (clustering) |
 | **Putting it together** | 13 | A multi-model workflow that turns predictions into an intervention decision with an estimated return |
 
