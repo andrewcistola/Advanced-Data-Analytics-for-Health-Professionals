@@ -1,6 +1,6 @@
-# Health-Data-Analytics
+# Advanced Health Data Analytics for Professionals
 
-This repo holds code and content for an intermediate, graduate-level course in health data analytics. The course is aimed at future healthcare administrators and public health professionals. It covers three things: the technical skills to work with real healthcare data, the judgment to lead analytics projects, and the practices to use generative AI responsibly in that work.
+This repo holds code and content for an intermediate, graduate-level course in health data analytics. The course is aimed at current or future clinicians, administrators, and public health professionals.
 
 ## About the course
 
