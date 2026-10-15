@@ -11,6 +11,7 @@ Each deck has:
   3. **Reform goals:** current reform goals and future considerations
   4. **How analytics is deployed** in the domain
   5. **Analytics in decisions:** how analytics drives decision making, covering the business question students take on in the matching lab
+- a closing **Discussion** slide with one practical question that asks students to draw on their own experience and career
 
 | Week | Seminar | Lab |
 |---|---|---|

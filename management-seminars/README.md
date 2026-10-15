@@ -7,10 +7,11 @@ Most decks have a title slide and five content slides, each with **speaker notes
 1. **Basics:** the topic's core concepts and terminology
 2. **Best practices** for data analytics (two slides)
 3. **Common pitfalls** and how to avoid them (two slides)
+4. **Discussion:** one practical question that asks students to draw on their own experience and career
 
 Week 1 instead gives an overview of the course's seminar types and labs. Week 13 closes with four pieces of advice that experienced analytics practitioners repeat often.
 
-| Week | Seminar | Content slides |
+| Week | Seminar | Content slides (excluding discussion) |
 |---|---|---|
 | 1 | [Course Overview](week01_course_overview.pptx) | 5 |
 | 2 | [Components of a Data Analytics Project](week02_project_components.pptx) | 5 |
