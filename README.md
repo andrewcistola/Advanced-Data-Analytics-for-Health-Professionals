@@ -23,7 +23,7 @@ Each week combines four strands that build toward a hands-on lab:
 |---|---|
 | **Analytics management** | Components of an analytics project, stakeholder alignment, writing requirements, quality assurance, designing deliverables, communicating complex findings, managing timelines and setbacks |
 | **AI in analytics** | How generative AI and machine learning work, the current tool landscape, using AI to write code, when to use it and when not to, and how to evaluate its output |
-| **Domain content** | A healthcare administration topic, such as claims and revenue cycle, quality measurement, risk adjustment, transitions of care, area-level resources, or fraud, waste and abuse |
+| **Domain context** | A healthcare administration topic, such as claims and revenue cycle, quality measurement, risk adjustment, transitions of care, area-level resources, or fraud, waste and abuse |
 | **Technical skills** | The skill the lab needs, from basic SQL through joins, subqueries and optimization, to scikit-learn and neural networks |
 
 The **lab** is where the strands meet. Students apply that week's technical skill to a business question from the domain seminar, using one realistic dataset all term. Every lab includes a step where students use a generative AI tool and check its work. Each lab ends with a short written answer for a stakeholder, not just code.
